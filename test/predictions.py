@@ -3,19 +3,21 @@
 #tf.enable_eager_execution()
 
 def predictions(tf,model):
-    class_ids = ["Iris setosa", "Iris versicolor", "Iris virginica"]
-    
+    class_ids = ["Bajo de peso", "Peso Ideal", "Sobrepeso"]
+            
     predict_dataset = tf.convert_to_tensor([
-        [5.1, 3.3, 1.7, 0.5,],
-        [5.9, 3.0, 4.2, 1.5,],
-        [6.9, 3.1, 5.4, 2.1]
+        [24.0, 1.0, 150.0,36.0,],#Bajo de peso
+        [41.0, 0.0, 171.0, 81.0,],#Sobrepeso
+        [62.0, 1.0, 170.0, 60.0],#Peso Ideal
+        [19.0, 1.0, 120.0,50.0]#Sobrepeso
     ])
+
     
     """
-    model = tf.keras.Sequential([#see this numbers...
-      tf.keras.layers.Dense(10, activation="relu", input_shape=(4,)),  # input shape required
-      tf.keras.layers.Dense(10, activation="relu"),
-      tf.keras.layers.Dense(3)
+    #Nota: los numeros aca arriba tienen que ser float, segun la documentacion por la forma en que usa la gpu para hacer cuentas
+    no se lleva bien con los int, es mejor usar float.
+    
+    PD: aunque en los sets hay ints, hice que los tome como float X.0 por esta misma razon
     ])
     """
     

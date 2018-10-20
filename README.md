@@ -1,2 +1,0 @@
-# redesNeuronales
-Tensorflow test
